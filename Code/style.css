@@ -1,0 +1,835 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@font-face {
+    font-family: 'Gwyner';
+    src: url('../Imgs_Fonts/gwyner-condensed-light.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --bg-color: #000;
+    --second-bg-color: #2E3038;
+    --text-color: #ffffff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-color);
+    cursor: default;
+}
+
+/* Header && NavBar */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12vh;
+    padding: 2rem 2rem;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .5s;
+}
+
+.header.sticky {
+    background-color: var(--bg-color);
+    font-family: 'Roboto';
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 100;
+    margin-left: 10.8rem;
+    font-family: 'Gwyner';
+    transition: 0.6s;
+    z-index: 100;
+}
+
+.logo:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20rem;
+}
+
+.navbar a {
+    color: var(--text-color);
+    font-size: 2.3rem;
+    font-family: 'Roboto';
+    font-weight: 100;
+    margin: 0 1.3rem;
+    transition: 0.6s;
+}
+
+.navbar a:hover {
+    opacity: 0.5;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    opacity: 0.5;
+}
+
+.btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 35rem;
+    height: 5rem;
+}
+
+.btn-box .btn {
+    height: 100%;
+    width: 15rem;
+    position: relative;
+    margin-left: 9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FBE84F;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: var(--bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box .btn:hover {
+    color: white;
+}
+
+.btn-box .btn:hover::before {
+    width: 100%;
+    color: white;
+}
+
+#menu-icon {
+    font-size: 4rem;
+    cursor: pointer;
+    color: var(--text-color);
+    display: none;
+    position: absolute;
+    top: 2rem;
+    /* Adjust as needed */
+    right: 2rem;
+    /* Adjust as needed */
+    z-index: 101;
+    /* Ensure it's above other elements */
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* Home Section */
+.home {
+    background: #000;
+    display: flex;
+    /* justify-content: start; */
+    flex-direction: column;
+}
+
+.home-section {
+    z-index: 99;
+}
+
+.home-section h2 {
+    font-size: 6rem;
+    font-family: 'Gwyner';
+    line-height: 1.3;
+    margin: 5rem 0 1rem 0;
+}
+
+.home-section p {
+    font-size: 2rem;
+    font-weight: 200;
+    font-family: 'Roboto';
+    margin: 1rem 0 4rem 0;
+}
+
+.home-companies {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.home-companies img {
+    height: 3rem;
+    position: relative;
+    right: 3%;
+    margin-bottom: 3rem;
+    width: calc(16.666% - 2rem);
+    /* 6 images in a row with spacing */
+}
+
+.collabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collabs .projects {
+    margin-right: 14rem;
+}
+
+.collabs .projects img {
+    height: 50%;
+    width: 110%;
+    object-fit: cover;
+}
+
+.projects h2 {
+    font-size: 4rem;
+    font-family: 'Gwyner';
+    margin: 2rem 0 1rem 0;
+}
+
+.projects p {
+    font-size: 2rem;
+    font-weight: 200;
+    font-family: 'Roboto';
+    margin-bottom: 10rem;
+    white-space: nowrap;
+}
+
+/* Article Section */
+.about {
+    background: var(--second-bg-color);
+    min-height: 70vh;
+}
+
+.about .about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.about-section #part2 {
+    margin-left: 17rem;
+    margin-top: 1rem;
+}
+
+.parts h2 {
+    font-size: 4rem;
+    font-family: 'Gwyner';
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+
+.parts p {
+    font-size: 2rem;
+    font-weight: 200;
+    font-family: 'Roboto';
+}
+
+/* Chat Section */
+.chat {
+    background: #000;
+    min-height: 40vh;
+    position: relative;
+}
+
+.chat-section {
+    position: absolute;
+    top: 10%;
+}
+
+.chat-section h2 {
+    font-size: 3rem;
+    font-family: 'Gwyner';
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chat-section p {
+    font-size: 2rem;
+    font-weight: 200;
+    font-family: 'Roboto';
+    margin: 1rem 0 4rem 0;
+}
+
+.chat-section .btn-box .btn {
+    margin: 0;
+    position: absolute;
+    top: -35%;
+}
+
+.footer {
+    min-height: 7vh;
+    background: var(--second-bg-color);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer h2 {
+    font-size: 2rem;
+    font-family: 'Gwyner';
+    margin-left: 13rem;
+}
+
+.footer-social {
+    margin-right: 13rem;
+}
+
+.footer-social img {
+    margin: 0 1rem;
+    scale: 1;
+    transition: .5s;
+}
+
+.footer-social img:hover {
+    scale: 1.5;
+}
+
+/* Hamburger Navigation Menu */
+.mobile-nav {
+    display: none;
+}
+
+.mobile-navbar {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 40vh;
+    padding-top: 12vh;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+.mobile-navbar a {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--text-color);
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.mobile-navbar.active {
+    transform: translateX(0);
+}
+
+/* Breakpoints */
+@media (max-width: 1400px) {
+    html {
+        font-size: 55%;
+    }
+
+    .about-section #part2 {
+        margin-left: 15rem;
+    }
+}
+
+@media (max-width: 1350px) {
+    html {
+        font-size: 55%;
+    }
+
+    .home-companies img {
+        width: 13%;
+    }
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 50%;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .about {
+        min-height: 65vh;
+    }
+
+    .chat {
+        min-height: 27vh;
+    }
+
+    .collabs .projects img {
+        height: 50%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .about {
+        min-height: 70vh;
+    }
+
+    .chat {
+        min-height: 35vh;
+    }
+}
+
+@media (max-width: 1075px) {
+    html {
+        font-size: 45%;
+    }
+
+    .about {
+        min-height: 60vh;
+    }
+
+    .chat {
+        min-height: 30vh;
+    }
+
+    .footer h2 {
+        font-size: 2.7rem;
+    }
+
+    .footer-social img {
+        width: 20%;
+    }
+}
+
+@media (max-width: 955px) {
+    .logo {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-left: 9rem;
+        font-family: 'Gwyner';
+        transition: 0.6s;
+        z-index: 100;
+    }
+
+    #menu-icon {
+        display: block;
+        font-size: 4.5rem;
+    }
+
+    .btn.btn2 {
+        display: none;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .btn-box .btn.btn1 {
+        font-size: 2rem;
+        text-align: center;
+        color: #000;
+        left: 49.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .home-section h2 {
+        font-size: 8rem;
+        margin-bottom: 4rem;
+    }
+
+    .home-section p {
+        font-size: 3rem;
+    }
+
+    .home-companies img {
+        width: calc(33.333% - 2rem);
+        /* 3 images in a row with spacing */
+    }
+
+    .collabs {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .collabs .projects img {
+        width: 117%;
+    }
+
+    .projects h2 {
+        font-size: 4rem;
+    }
+
+    .projects p {
+        font-size: 3rem;
+    }
+
+    .about {
+        min-height: 85vh;
+        min-width: 60vh;
+    }
+
+    .about .about-section {
+        flex-direction: column;
+    }
+
+    .about-section #part2 {
+        margin-left: 0;
+    }
+
+    .about .parts h2 {
+        font-size: 5rem;
+        margin-bottom: 6rem;
+    }
+
+    .about .parts p {
+        font-size: 2rem;
+    }
+
+    .chat {
+        min-height: 35vh;
+    }
+
+    .chat h2 {
+        font-size: 4rem;
+    }
+
+    .chat p {
+        font-size: 3rem;
+    }
+
+    .btn-box .btn {
+        width: 16rem;
+        height: 5rem;
+        font-size: 2.5rem;
+    }
+
+    .footer h2 {
+        font-size: 3rem;
+    }
+
+    .footer-social img {
+        width: 20%;
+    }
+}
+
+@media (max-width: 750px) {
+    html {
+        font-size: 35%;
+    }
+
+    .mobile-navbar a {
+        font-size: 4rem;
+    }
+
+    .home-section h2 {
+        margin-top: 8rem;
+        margin-bottom: 3rem;
+    }
+
+    #menu-icon {
+        font-size: 5.5rem;
+    }
+
+    .collabs {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .collabs .projects img {
+        width: 110%;
+    }
+
+    .projects h2 {
+        font-size: 4.5rem;
+    }
+
+    .projects p {
+        font-size: 3rem;
+    }
+
+    .about {
+        min-height: 95vh;
+    }
+
+    .about-section #part2 {
+        margin-left: 0;
+    }
+
+    .about .parts h2 {
+        font-size: 5rem;
+        margin-bottom: 6rem;
+    }
+
+    .about .parts p {
+        font-size: 3rem;
+    }
+
+    .chat {
+        min-height: 28vh;
+    }
+
+    .chat-section h2 {
+        font-size: 4rem;
+    }
+
+    .chat-section p {
+        font-size: 2.9rem;
+        margin-bottom: 5rem;
+    }
+
+    .btn-box .btn {
+        width: 18rem;
+        height: 7rem;
+        font-size: 3rem;
+    }
+
+    .footer h2 {
+        font-size: 3rem;
+    }
+
+    .footer-social img {
+        width: 20%;
+    }
+}
+
+@media (max-width: 680px) {
+    html {
+        font-size: 30%;
+    }
+
+    .projects h2 {
+        font-size: 5rem;
+    }
+
+    .projects p {
+        font-size: 3.5rem;
+    }
+
+    .about {
+        min-height: 81vh;
+    }
+
+    .about-section #part2 {
+        margin-left: 0;
+    }
+
+    .about .parts h2 {
+        font-size: 5.5rem;
+        margin-bottom: 6rem;
+    }
+
+    .about .parts p {
+        font-size: 3rem;
+    }
+
+    .chat {
+        min-height: 28vh;
+    }
+
+    .chat-section h2 {
+        font-size: 5rem;
+    }
+
+    .chat-section p {
+        font-size: 3.5rem;
+        margin-bottom: 5rem;
+    }
+
+    .btn-box .btn {
+        width: 18rem;
+        height: 7rem;
+        font-size: 3.3rem;
+    }
+
+    .footer h2 {
+        font-size: 3rem;
+    }
+
+    .footer-social img {
+        width: 20%;
+    }
+}
+
+@media (max-width: 550px) {
+    html {
+        font-size: 30%;
+    }
+
+    .logo {
+        font-size: 3rem;
+        margin-left: 8rem;
+    }
+
+    .projects h2 {
+        font-size: 5rem;
+    }
+
+    .projects p {
+        font-size: 3.5rem;
+    }
+
+    .about {
+        min-height: 86vh;
+    }
+
+    .about-section #part2 {
+        margin-left: 0;
+    }
+
+    .about .parts h2 {
+        font-size: 5.5rem;
+        margin-bottom: 6rem;
+    }
+
+    .about .parts p {
+        font-size: 3rem;
+    }
+
+    .chat {
+        min-height: 25vh;
+    }
+
+    .chat-section h2 {
+        font-size: 4.5rem;
+    }
+
+    .chat-section p {
+        font-size: 2.9rem;
+        margin-bottom: 5rem;
+    }
+
+    .btn-box .btn {
+        width: 18rem;
+        height: 7rem;
+        font-size: 3rem;
+    }
+
+    .footer h2 {
+        font-size: 3.5rem;
+    }
+
+    .footer-social img {
+        width: 23%;
+    }
+}
+
+@media (max-width: 488px) {
+
+    #menu-icon {
+        margin-top: 4rem;
+    }
+
+    .home-section p {
+        font-size: 2.6rem;
+    }
+
+    .projects h2 {
+        font-size: 6rem;
+    }
+
+    .projects p {
+        font-size: 2.9rem;
+    }
+
+    .about {
+        min-height: 90vh;
+    }
+
+    .about-section #part2 {
+        margin-left: 0;
+    }
+
+    .about .parts h2 {
+        font-size: 5.5rem;
+        margin-bottom: 6rem;
+    }
+
+    .about .parts p {
+        font-size: 3rem;
+    }
+
+    .chat {
+        min-height: 25vh;
+    }
+
+    .chat-section h2 {
+        font-size: 4.5rem;
+    }
+
+    .chat-section p {
+        font-size: 2.3rem;
+        margin-bottom: 5rem;
+    }
+
+    .btn-box .btn {
+        font-size: 2.5rem;
+    }
+
+    .footer h2 {
+        font-size: 3.5rem;
+    }
+
+    .footer-social img {
+        width: 23%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 25%;
+    }
+
+    .home-section h2 {
+        margin-top: 12rem;
+    }
+
+    .home-section p {
+        font-size: 2.8rem;
+    }
+
+    .about {
+        min-height: 75vh;
+    }
+
+    .chat {
+        min-height: 22vh;
+    }
+
+    .chat-section p {
+        font-size: 2.5rem;
+        margin-bottom: 5rem;
+    }
+}
